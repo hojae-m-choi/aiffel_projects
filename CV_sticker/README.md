@@ -35,7 +35,7 @@
     - [O]  아쉬운 점
     - [O]  느낀 점
     - [O]  어려웠던 점
-  전부 작성됨
+  전부 작성됨  
   ![image](https://github.com/ek0111/aiffel_projects/assets/58682424/d509163b-f213-43ec-a448-7121d65114ac)
 
 ## 리뷰
