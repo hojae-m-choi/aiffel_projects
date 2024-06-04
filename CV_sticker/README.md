@@ -3,17 +3,17 @@
 - [O]  **1. 주어진 문제를 해결하는 완성된 코드가 제출되었나요? (완성도)**
     - 문제에서 요구하는 최종 결과물이 첨부되었는지 확인 
     - 문제를 해결하는 완성된 코드란 프로젝트 루브릭 3개 중 2개,  퀘스트 문제 요구조건 등을 지칭
-        1. 스티거를 정확한 위치를 찾아 붙여 기능을 완수하였다
+    1. 스티거를 정확한 위치를 찾아 붙여 기능을 완수하였다
     ![image](https://github.com/ek0111/aiffel_projects/assets/58682424/89d24832-7d52-4986-9104-1fe20a9c52e6)
 
-        2. 각도/명암에따른 다양한 시뮬레이션을 통한 이미지를 테스트 해보았다
+    2. 각도/명암에따른 다양한 시뮬레이션을 통한 이미지를 테스트 해보았다
     ![image](https://github.com/ek0111/aiffel_projects/assets/58682424/ef6e70b5-b036-45e3-8c17-e824f44c7071)
     ![image](https://github.com/ek0111/aiffel_projects/assets/58682424/a81d1b02-004c-4bc5-9a3e-825b6a831162)
     ![image](https://github.com/ek0111/aiffel_projects/assets/58682424/3c403da8-bfe2-40b1-baa1-9677b4ab15f5)
            
-        3. 문제검을 찾아보기 위한 시뮬레이션을 위하여 함수화 하였다.
-            ![image](https://github.com/ek0111/aiffel_projects/assets/58682424/e667d489-57b1-4605-bb7f-91a7517985ac)
-
+    3. 문제검을 찾아보기 위한 시뮬레이션을 위하여 함수화 하였다.
+  ![image](https://github.com/ek0111/aiffel_projects/assets/58682424/e667d489-57b1-4605-bb7f-91a7517985ac)
+           
 
 - [O]  **2. 프로젝트에서 핵심적인 부분에 대한 설명이 주석(닥스트링) 및 마크다운 형태로 잘 기록되어있나요? (설명)**
     - [O]  모델 선정 이유
@@ -43,6 +43,4 @@
 다양한 이미지 사진을 업로드 해서 테스트 해본것을 배워야 겠다.
 또한 스티커의 위치값과 스티커이미지/ 배경영역을 처리하기 위해 IMREAD_UNCHANGED 플래그를 넣어서 스티커 배경 변경에 사용한 부분이 인상깊었다.
 성실히 잘 프로젝트 되었다.
-
-![image](https://github.com/ek0111/aiffel_projects/assets/58682424/3618719b-8cd5-4264-ad0f-d05f484501fa)
 
