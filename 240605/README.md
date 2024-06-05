@@ -14,14 +14,16 @@
     - [x]  모델 선정 이유
     - [ ]  Metrics 선정 이유
     - [ ]  Loss 선정 이유
-    ![image](https://github.com/inseopbyeon/chj_aiffel_projects/assets/23303852/c098b0db-0a4d-4ca0-95d6-573fbbdc0b51)
+  
+  ![image](https://github.com/inseopbyeon/chj_aiffel_projects/assets/23303852/c098b0db-0a4d-4ca0-95d6-573fbbdc0b51)
 
 - [x]  **3. 체크리스트에 해당하는 항목들을 모두 수행하였나요? (문제 해결)**
     - [ ]  데이터를 분할하여 프로젝트를 진행했나요? (train, validation, test 데이터로 구분)
     - [ ]  하이퍼파라미터를 변경해가며 여러 시도를 했나요? (learning rate, dropout rate, unit, batch size, epoch 등)
     - [x]  각 실험을 시각화하여 비교하였나요?
     - [x]  모든 실험 결과가 기록되었나요?
-    ![image](https://github.com/inseopbyeon/chj_aiffel_projects/assets/23303852/f47dd1ea-6c3f-458e-a4de-3c69c3bac553)
+          
+  ![image](https://github.com/inseopbyeon/chj_aiffel_projects/assets/23303852/f47dd1ea-6c3f-458e-a4de-3c69c3bac553)
 
 
 - [x]  **4. 프로젝트에 대한 회고가 상세히 기록 되어 있나요? (회고, 정리)**
