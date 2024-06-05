@@ -12,9 +12,9 @@
 
 - [x]  **2. 프로젝트에서 핵심적인 부분에 대한 설명이 주석(닥스트링) 및 마크다운 형태로 잘 기록되어있나요? (설명)**
     - [x]  모델 선정 이유
-    ![image](https://github.com/inseopbyeon/chj_aiffel_projects/assets/23303852/c098b0db-0a4d-4ca0-95d6-573fbbdc0b51)
     - [ ]  Metrics 선정 이유
     - [ ]  Loss 선정 이유
+    ![image](https://github.com/inseopbyeon/chj_aiffel_projects/assets/23303852/c098b0db-0a4d-4ca0-95d6-573fbbdc0b51)
 
 - [x]  **3. 체크리스트에 해당하는 항목들을 모두 수행하였나요? (문제 해결)**
     - [ ]  데이터를 분할하여 프로젝트를 진행했나요? (train, validation, test 데이터로 구분)
