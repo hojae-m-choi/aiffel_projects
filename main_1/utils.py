@@ -1,18 +1,29 @@
 import tensorflow as tf
 
 
-def create_padding_mask(x):
-    mask = tf.cast(tf.math.equal(x, 0), tf.float32)
+def create_padding_mask(x, pad_token):
+    # PAD TOKEN is encoded with -1.0
+    mask = tf.cast(tf.math.equal(x, pad_token), tf.float32)
+    # boolean matrix 1: masked, 0: unmasked
+    
     # (batch_size, 1, 1, sequence length)
     return mask[:, tf.newaxis, tf.newaxis, :]
 
 
-def create_look_ahead_mask(x):
+def create_look_ahead_mask(x, pad_token):
     """행을 Query, 열을 Key로 표현된 행렬"""
     seq_len = tf.shape(x)[1]
-    look_ahead_mask = 1 - tf.linalg.band_part(tf.ones((seq_len, seq_len)), -1, 0)
-    padding_mask = create_padding_mask(x) 
-    # 만약에 숫자 0인 단어가 있다면 이 또한 패딩 해야 합
+    # (sequence length, sequence length)
+    look_ahead_mask = 1 - tf.linalg.band_part(tf.ones((seq_len, seq_len)), -1, 0) 
+    # boolean matrix 1: masked, 0: unmasked
+    # unmasking lower triangle only (including diagonal)
+    
+    # (batch_size, 1, 1, sequence length)
+    padding_mask = create_padding_mask(x, pad_token) 
+    # 만약에 PAD_TOKEN인 단어가 있다면 이 또한 패딩 해야 함.
+    
+    # maximum of two same sized boolean = or operation of two boolean matrix
+    # (batch_size, 1, sequence length, sequence length)
     return tf.maximum(look_ahead_mask, padding_mask)
 
 
