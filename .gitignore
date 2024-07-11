@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 240605/
 .DS_Store
+*.zip
+.DS_Store
