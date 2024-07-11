@@ -230,7 +230,6 @@ def main(_):
     train_log_dir = 'logs/train'
     train_summary_writer = tf.summary.create_file_writer(train_log_dir)
 
-
     @tf.function
     def train_step(inputs, labels):
         with tf.GradientTape() as tape:
@@ -243,6 +242,11 @@ def main(_):
         grads = tape.gradient(total_loss, model.trainable_variables)
         optimizer.apply_gradients(zip(grads, model.trainable_variables))
 
+        tf.debugging.check_numerics(tensor, ## debugging
+                                    message=f'Tensor {'total_loss'} contains NaNs or Infs'
+                                    ''.join([f'{key}_loss: {l}' for key, l in losses.items()])
+                                   )
+        
         return total_loss, losses
 
     for epoch in range(init_epoch+1,cfg['epoch']):

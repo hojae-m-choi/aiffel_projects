@@ -14,13 +14,6 @@ from make_prior_box import prior_box
 from tf_dataloader import load_dataset, _jaccard 
 from tf_build_ssd_model import SsdModel
 
-# hyperparameters
-args = argparse.ArgumentParser()
-args.add_argument('model_path', type=str, nargs='?', default='checkpoints/')
-args.add_argument('img_path', type=str, nargs='?', default=None)
-args.add_argument('camera', type=str, nargs='?', default=False)
-
-args_config = args.parse_args()
 
 
 def compute_nms(boxes, scores, nms_threshold=0.5, limit=200):
@@ -150,10 +143,10 @@ def recover_pad_output(outputs, pad_params):
 
     """
     img_h, img_w, img_pad_h, img_pad_w = pad_params
-
-    recover_xy = np.reshape(outputs[0], [-1, 2, 2]) * \
-                 [(img_pad_w + img_w) / img_w, (img_pad_h + img_h) / img_h]
-    outputs[0] = np.reshape(recover_xy, [-1, 4])
+    if len(outputs) > 0:
+        recover_xy = np.reshape(outputs[0], [-1, 2, 2]) * \
+                     [(img_pad_w + img_w) / img_w, (img_pad_h + img_h) / img_h]
+        outputs[0] = np.reshape(recover_xy, [-1, 4])
 
     return outputs
 
@@ -172,9 +165,9 @@ def show_image(img, boxes, classes, scores, img_height, img_width, prior_index, 
     else:
         color = (0, 0, 255)
     cv2.rectangle(img, (x1, y1), (x2, y2), color, 2)
-    # confidence
 
-    if scores:
+    # confidence
+    if any(scores):
         score = "{:.4f}".format(scores[prior_index])
         class_name = class_list[classes[prior_index]]
 
@@ -234,9 +227,9 @@ def main(_):
             show_image(img_raw, boxes, classes, scores, img_height_raw, img_width_raw, prior_index,cfg['labels_list'])
 
         cv2.imwrite(save_img_path, img_raw)
-        cv2.imshow('results', img_raw)
-        if cv2.waitKey(0) == ord('q'):
-            exit(0)
+#         cv2.imshow('results', img_raw)
+#         if cv2.waitKey(0) == ord('q'):
+#             exit(0)
 
     else:
         capture = cv2.VideoCapture(args_config.img_path)
@@ -275,6 +268,15 @@ def main(_):
 
 if __name__ == '__main__':
     os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+    
+    # hyperparameters
+    args = argparse.ArgumentParser()
+    args.add_argument('model_path', type=str, nargs='?', default='checkpoints/')
+    args.add_argument('img_path', type=str, nargs='?', default=None)
+    args.add_argument('camera', type=str, nargs='?', default=False)
+
+    args_config = args.parse_args()
+
     try:
         main(None)
     except Exception as e:
